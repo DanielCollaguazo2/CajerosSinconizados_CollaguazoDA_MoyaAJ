@@ -4,6 +4,9 @@
  */
 package vista;
 
+import java.awt.event.ActionListener;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Daniel Collaguazo Malla
@@ -26,57 +29,69 @@ public class vista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        jSpinner1 = new javax.swing.JSpinner();
+        cajero1 = new javax.swing.JLabel();
+        cajero2 = new javax.swing.JLabel();
+        cajero3 = new javax.swing.JLabel();
+        persona1 = new javax.swing.JLabel();
+        persona2 = new javax.swing.JLabel();
+        persona4 = new javax.swing.JLabel();
+        persona3 = new javax.swing.JLabel();
+        persona5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        iniciar = new javax.swing.JButton();
+        parar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setBackground(new java.awt.Color(204, 0, 0));
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/cajero.jpg"))); // NOI18N
-        jLabel3.setMaximumSize(new java.awt.Dimension(34, 34));
-        jLabel3.setMinimumSize(new java.awt.Dimension(34, 34));
-        jLabel3.setPreferredSize(new java.awt.Dimension(34, 34));
+        cajero1.setBackground(new java.awt.Color(204, 0, 0));
+        cajero1.setForeground(new java.awt.Color(0, 0, 0));
+        cajero1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/cajero.jpg"))); // NOI18N
+        cajero1.setMaximumSize(new java.awt.Dimension(34, 34));
+        cajero1.setMinimumSize(new java.awt.Dimension(34, 34));
+        cajero1.setPreferredSize(new java.awt.Dimension(34, 34));
+        getContentPane().add(cajero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 125, 127));
 
-        jLabel4.setBackground(new java.awt.Color(204, 0, 0));
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/cajero.jpg"))); // NOI18N
-        jLabel4.setMaximumSize(new java.awt.Dimension(34, 34));
-        jLabel4.setMinimumSize(new java.awt.Dimension(34, 34));
-        jLabel4.setPreferredSize(new java.awt.Dimension(34, 34));
+        cajero2.setBackground(new java.awt.Color(204, 0, 0));
+        cajero2.setForeground(new java.awt.Color(0, 0, 0));
+        cajero2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/cajero.jpg"))); // NOI18N
+        cajero2.setMaximumSize(new java.awt.Dimension(34, 34));
+        cajero2.setMinimumSize(new java.awt.Dimension(34, 34));
+        cajero2.setPreferredSize(new java.awt.Dimension(34, 34));
+        getContentPane().add(cajero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, 125, 127));
 
-        jLabel5.setBackground(new java.awt.Color(204, 0, 0));
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/cajero.jpg"))); // NOI18N
-        jLabel5.setMaximumSize(new java.awt.Dimension(34, 34));
-        jLabel5.setMinimumSize(new java.awt.Dimension(34, 34));
-        jLabel5.setPreferredSize(new java.awt.Dimension(34, 34));
+        cajero3.setBackground(new java.awt.Color(204, 0, 0));
+        cajero3.setForeground(new java.awt.Color(0, 0, 0));
+        cajero3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/cajero.jpg"))); // NOI18N
+        cajero3.setMaximumSize(new java.awt.Dimension(34, 34));
+        cajero3.setMinimumSize(new java.awt.Dimension(34, 34));
+        cajero3.setPreferredSize(new java.awt.Dimension(34, 34));
+        getContentPane().add(cajero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 60, 125, 127));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Azul.jpg"))); // NOI18N
+        persona1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Azul.jpg"))); // NOI18N
+        getContentPane().add(persona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 551, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Naranja.jpg"))); // NOI18N
+        persona2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Naranja.jpg"))); // NOI18N
+        getContentPane().add(persona2, new org.netbeans.lib.awtextra.AbsoluteConstraints(416, 551, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Rosa.jpg"))); // NOI18N
+        persona4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Rosa.jpg"))); // NOI18N
+        getContentPane().add(persona4, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 551, -1, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Rojo.jpg"))); // NOI18N
+        persona3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Rojo.jpg"))); // NOI18N
+        getContentPane().add(persona3, new org.netbeans.lib.awtextra.AbsoluteConstraints(524, 551, -1, -1));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verde.jpg"))); // NOI18N
+        persona5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verde.jpg"))); // NOI18N
+        getContentPane().add(persona5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 551, -1, -1));
 
         jScrollPane1.setViewportView(jList1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 668, 351, 143));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -91,99 +106,39 @@ public class vista extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        jButton1.setText("Iniciar");
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 670, 480, 142));
 
-        jButton2.setText("Parar");
+        iniciar.setText("Iniciar");
+
+        parar.setText("Parar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(iniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(parar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(iniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(parar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(878, 668, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Raleway Black", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Banco");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jScrollPane1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(19, 19, 19))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(251, 251, 251)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(138, 138, 138)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(123, 123, 123)
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(225, 225, 225))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(308, 308, 308)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(282, 282, 282))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))
-                .addGap(378, 378, 378)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(1, 1, 1)))
-                .addGap(19, 19, 19))
-        );
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 264, 34));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -222,23 +177,60 @@ public class vista extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void listenerBotonIniciar(ActionListener listener){
+        iniciar.addActionListener(listener);
+    }
+
+    public JLabel getCajero1() {
+        return cajero1;
+    }
+
+    public JLabel getCajero2() {
+        return cajero2;
+    }
+
+    public JLabel getCajero3() {
+        return cajero3;
+    }
+
+    public JLabel getPersona1() {
+        return persona1;
+    }
+
+    public JLabel getPersona2() {
+        return persona2;
+    }
+
+    public JLabel getPersona3() {
+        return persona3;
+    }
+
+    public JLabel getPersona4() {
+        return persona4;
+    }
+
+    public JLabel getPersona5() {
+        return persona5;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel cajero1;
+    private javax.swing.JLabel cajero2;
+    private javax.swing.JLabel cajero3;
+    private javax.swing.JButton iniciar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton parar;
+    private javax.swing.JLabel persona1;
+    private javax.swing.JLabel persona2;
+    private javax.swing.JLabel persona3;
+    private javax.swing.JLabel persona4;
+    private javax.swing.JLabel persona5;
     // End of variables declaration//GEN-END:variables
 }
