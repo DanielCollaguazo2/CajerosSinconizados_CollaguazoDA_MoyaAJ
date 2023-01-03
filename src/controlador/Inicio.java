@@ -4,6 +4,9 @@
  */
 package controlador;
 
+import modelo.Consumidor;
+import modelo.ProductorPersona;
+import modelo.bodega;
 import vista.vista;
 
 /**
@@ -13,7 +16,15 @@ import vista.vista;
 public class Inicio {
     public static void main(String[] args) {
         vista v =  new vista();
-        ListenerBotonIniciar li = new ListenerBotonIniciar(v, v.getPersona1());
+        bodega b = new bodega();
+        ProductorPersona h1 = new ProductorPersona(v, v.getPersona1(), b);
+        ProductorPersona h2 = new ProductorPersona(v, v.getPersona2(), b);
+        ProductorPersona h3 = new ProductorPersona(v, v.getPersona3(), b);
+        ProductorPersona h4 = new ProductorPersona(v, v.getPersona4(), b);
+        ProductorPersona h5 = new ProductorPersona(v, v.getPersona5(), b);
+        
+        Consumidor c1 = new Consumidor(b); 
+        ListenerBotonIniciar li = new ListenerBotonIniciar(v, h1, h2, h3, h4, h5, c1);
         v.listenerBotonIniciar(li);
         v.setVisible(true);
     }
