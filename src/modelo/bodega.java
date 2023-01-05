@@ -22,28 +22,27 @@ public class bodega {
                 System.out.println("Esta esperando");
                 wait();
             } catch (InterruptedException ex) {
-                Logger.getLogger(bodega.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Buffer.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 
         this.valor = valor;
 
         lleno = true;
-        System.out.println("Productor genera" + valor + "Lleno = " + lleno);
+        System.out.println("Productor genera " + valor + " Lleno = " + lleno);
         notifyAll();
     }
 
     public synchronized void consumir() {
         if (lleno == false) {
             try {
-                System.out.println("esta esperado a consumir");
                 wait();
             } catch (InterruptedException ex) {
-                Logger.getLogger(bodega.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Buffer.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 
-        lleno = true;
+        lleno = false;
         System.out.println("Consumidor consume" + valor);
         notifyAll();
     }

@@ -69,7 +69,7 @@ public class ProductorPersona extends Thread {
                     }
                 }
                 verificar = true;
-                System.out.println("hola mundo");
+                System.out.println("hola mundo" + i);
             } catch (InterruptedException ex) {
                 Logger.getLogger(ProductorPersona.class.getName()).log(Level.SEVERE, null, ex);
             }

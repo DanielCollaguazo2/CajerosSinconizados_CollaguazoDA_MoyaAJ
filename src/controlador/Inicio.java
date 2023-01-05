@@ -24,7 +24,10 @@ public class Inicio {
         ProductorPersona h5 = new ProductorPersona(v, v.getPersona5(), b);
         
         Consumidor c1 = new Consumidor(b); 
-        ListenerBotonIniciar li = new ListenerBotonIniciar(v, h1, h2, h3, h4, h5, c1);
+        Consumidor c2 = new Consumidor(b); 
+        Consumidor c3 = new Consumidor(b); 
+        
+        ListenerBotonIniciar li = new ListenerBotonIniciar(v, h1, h2, h3, h4, h5, c1, c2, c3);
         v.listenerBotonIniciar(li);
         v.setVisible(true);
     }
