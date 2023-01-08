@@ -7,6 +7,8 @@ package modelo;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextArea;
+import vista.vista;
 
 /**
  *
@@ -14,80 +16,52 @@ import java.util.logging.Logger;
  */
 public class Consumidor extends Thread {
 
-    private BufferCopia buffer;
+    private Bodega1 b;
     String name;
     private int consumed;
-    private final int LIMIT = 15;
     private ArrayList<Cliente> clientes;
-    ListModelcajero ticket;
+    JTextArea t;
+    ListModelTabla lista;
+    DefaultTabla tabla;
+    private int tiempo=0;
 
-    public Consumidor(BufferCopia buffer, String name, ArrayList<Cliente> clientes, ListModelcajero ticket) {
-        this.buffer = buffer;
+    public Consumidor(Bodega1 buffer, String name, ArrayList<Cliente> clientes, JTextArea t, ListModelTabla lista) {
+        this.b = buffer;
         this.name = name;
         this.clientes = clientes;
-        this.ticket = ticket;
+        this.t = t;
+        this.lista = lista;
     }
 
     @Override
     public void run() {
-//        for (int i = 0; i < 100; i++) {
-//            try {
-//                Thread.sleep(10000);
-//                b.consumir();
-//                b.setConsumed(true);
-//            } catch (InterruptedException ex) {
-//                Logger.getLogger(Consumidor.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//            System.out.println(i +"-"+ name + " consume " + getName());
-//        }
-//        System.out.println("Termina thread " + getName());
-//    }
-
         while (consumed < 1000) {
 
             try {
-                //***************************************************************************************************************
-//                char c = buffer.consumir();
-//                buffer.setConsumed(true);
-//                consumed++;
-//                System.out.println("Recogido el caracter " + c + " del buffer");
-                //***************************************************************************************************************
-
-//                int cliente1 = (int) (Math.random() * 4);
-//                int cliente2 = (int) (Math.random() * 4);
-//                Cliente c1 = clientes.get(cliente1);
-//                Cliente c2 = clientes.get(cliente2);
-//                int saldo1 = c1.getSaldo();
-//                int saldo2 = c2.getSaldo();
-//                System.out.println("El saldo del cliente 1 es: " + saldo1 + " El saldo del cliente 2 es: " + saldo2);
-                Cliente c1 = buffer.consumir();
+                Cliente c1 = b.consumir();
                 int cliente2 = (int) (Math.random() * 4);
-//                int cliente2 = (int) (Math.random() * 4);
                 Cliente c2 = clientes.get(cliente2);
                 consumed++;
-                int monto = (int) (Math.random() * 100 + 1);
-                Ticket t = new Ticket(c1, c2, monto, true);
-                if (ticket.verificarLista()==true) {
-                    ticket.addElement("Cliente O: " + c1.getNombre());
-                    ticket.addElement("Saldo Cuenta: " + c1.getSaldo());
-                    ticket.addElement("Monto: " + monto);
-                    ticket.addElement("Cliente D: " + c2.getNombre());
-                    ticket.addElement("Estado: " + t.isEstado());
-                } else {
-                    ticket.removeAllElements();
-                    ticket.addElement("Cliente O: " + c1.getNombre());
-                    ticket.addElement("Saldo Cuenta: " + c1.getSaldo());
-                    ticket.addElement("Monto: " + monto);
-                    ticket.addElement("Cliente D: " + c2.getNombre());
-                    ticket.addElement("Estado: " + t.isEstado());
-                }
-                System.out.println("**************************************" + ticket.size());
+                int monto = (int) (Math.random() * c1.getSaldoInit());
+                Ticket tt = new Ticket(c1, c2, monto, true);
+                tt.generarValores();
+                t.setText("Cliente O: " + c1.getNombre() + "\nSaldo Cuenta: " + c1.getSaldoInit() + "\nMonto: " + monto + "\nCliente D: " + c2.getNombre() + "\nEstado: " + tt.isEstado());
+                lista.addElement(tt);
                 System.out.println("atendido al cliente: " + c1.getNombre());
-                sleep(2000);
+                sleep(tiempo);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Consumidor.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
     }
+
+    public int getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(int tiempo) {
+        this.tiempo = tiempo;
+    }
+    
 }

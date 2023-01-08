@@ -11,11 +11,11 @@ import javax.swing.DefaultListModel;
  *
  * @author Daniel Collaguazo Malla
  */
-public class ListModelcajero extends DefaultListModel<String> {
+public class ListModelTabla extends DefaultListModel<Ticket> {
 
-    private final ArrayList<String> listaCajero;
+    private final ArrayList<Ticket> listaCajero;
 
-    public ListModelcajero() {
+    public ListModelTabla() {
         this.listaCajero = new ArrayList<>();
     }
 
@@ -23,7 +23,7 @@ public class ListModelcajero extends DefaultListModel<String> {
         return listaCajero.isEmpty();
     }
 
-    public void fireIntervalRemoved(String s, int index) {
+    public void fireIntervalRemoved(Ticket s, int index) {
         listaCajero.remove(s);
         super.fireIntervalRemoved(this, index, index);
     }
@@ -40,7 +40,7 @@ public class ListModelcajero extends DefaultListModel<String> {
     }
 
     @Override
-    public String getElementAt(int index) {
+    public Ticket getElementAt(int index) {
         return listaCajero.get(index); 
     }
     public void removelist(){
@@ -48,7 +48,7 @@ public class ListModelcajero extends DefaultListModel<String> {
         super.fireIntervalRemoved(this, 0, 0);
     }
 
-    public void addElement(String s) {
+    public void addElement(Ticket s) {
         int index = listaCajero.size();
         listaCajero.add(s);
         fireIntervalAdded(this, index, index);

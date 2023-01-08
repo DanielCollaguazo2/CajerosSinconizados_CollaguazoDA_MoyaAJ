@@ -3,64 +3,59 @@ package modelo;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class BufferCopia {
+public class Bodega1 {
  
     private Cliente[] buffer;
     private int siguiente;
-    private boolean estaLlena;
-    private boolean estaVacia;
+    private boolean isLlena;
+    private boolean isVacia;
     private boolean consumed = true;
     private boolean esperando = true;
     
-    public BufferCopia(int tamanio){
+    public Bodega1(int tamanio){
         this.buffer = new Cliente[tamanio];
         this.siguiente = 0;
-        this.estaLlena = false;
-        this.estaVacia = true;
+        this.isLlena = false;
+        this.isVacia = true;
     }
     
     public synchronized Cliente consumir(){
         
-        while(this.estaVacia){
+        while(this.isVacia){
             try {
                 System.out.println("Essta esperando a consumir");
                 wait();
             } catch (InterruptedException ex) {
-                Logger.getLogger(BufferCopia.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Bodega1.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        
+        }        
         this.siguiente--;
-        this.estaLlena = false;
-        
+        this.isLlena = false;        
         if(this.siguiente == 0){
-            this.estaVacia = true;
-        }
-        
+            this.isVacia = true;
+        }       
         notifyAll();
-        
-        return this.buffer[this.siguiente];
-        
+        return this.buffer[this.siguiente];       
     }
     
     public synchronized boolean producir(Cliente c){
         esperando=false;
-        while(this.estaLlena){
+        while(this.isLlena){
             try {
                 esperando = true;
                 System.out.println("Esta esperando a Producir");
                 wait();
             } catch (InterruptedException ex) {
-                Logger.getLogger(BufferCopia.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Bodega1.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         this.buffer[this.siguiente] = c;
         
         this.siguiente++;
-        this.estaVacia = false;
+        this.isVacia = false;
         
         if(this.siguiente == this.buffer.length){
-            this.estaLlena = true;
+            this.isLlena = true;
         }
         
         notifyAll();

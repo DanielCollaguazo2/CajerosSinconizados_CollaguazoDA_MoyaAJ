@@ -11,13 +11,12 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.tools.DocumentationTool;
 import modelo.Cliente;
 import modelo.Consumidor;
-import modelo.ListModelcajero;
 import modelo.ProductorPersona;
 import modelo.Ticket;
-import modelo.bodega;
 import vista.vista;
 
 /**
@@ -30,10 +29,9 @@ public class ListenerBotonIniciar implements ActionListener {
     ProductorPersona h1;
     ProductorPersona h2, h3, h4, h5;
     Consumidor c1, c2, c3;
-    bodega b;
-    ListModelcajero informacion;
     ArrayList<Cliente> clientes;
-    public ListenerBotonIniciar(vista v, ProductorPersona h1, ProductorPersona h2, ProductorPersona h3, ProductorPersona h4, ProductorPersona h5, Consumidor c1, Consumidor c2, Consumidor c3, ListModelcajero informacion, ArrayList<Cliente> clientes) {
+
+    public ListenerBotonIniciar(vista v, ProductorPersona h1, ProductorPersona h2, ProductorPersona h3, ProductorPersona h4, ProductorPersona h5, Consumidor c1, Consumidor c2, Consumidor c3, ArrayList<Cliente> clientes) {
         this.v = v;
         this.h1 = h1;
         this.h2 = h2;
@@ -43,61 +41,56 @@ public class ListenerBotonIniciar implements ActionListener {
         this.c1 = c1;
         this.c2 = c2;
         this.c3 = c3;
-        this.informacion = informacion;
-        this.clientes=clientes;
+        this.clientes = clientes;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //   try {
-    //    try {
-            h1.start();
-            //PERSONA 2
-            //   v.getPersona2().setLocation(new Point(900, 450));
-            //   h2.setTiempo(1200);
-            // Thread.sleep(2000);
-            h2.start();
-            //PERSONA 3
-            //   v.getPersona3().setLocation(new Point(900, 450));
-            //   h3.setTiempo(1000);
-            h3.start();
-            //PERSONA 4
-            //    v.getPersona4().setLocation(new Point(900, 450));
-            //   h4.setTiempo(1000);
-            h4.start();
-            //PERSONA 5
-            //   v.getPersona5().setLocation(new Point(900, 450));
-            //   h5.setTiempo(1000);
-           h5.start();
+        try {
+            if (h1.isAlive()) {
+                h1.setTiempo(Integer.valueOf(v.getTxtCliente().getText()));
+                h2.setTiempo(Integer.valueOf(v.getTxtCliente().getText()));
+                h3.setTiempo(Integer.valueOf(v.getTxtCliente().getText()));
+                h4.setTiempo(Integer.valueOf(v.getTxtCliente().getText()));
+                h5.setTiempo(Integer.valueOf(v.getTxtCliente().getText()));
 
-           // Thread.sleep(2000);
-            //CAJERO 1
-            c1.start();
+                c1.setTiempo(Integer.valueOf(v.getTxtCajero().getText()));
+                c2.setTiempo(Integer.valueOf(v.getTxtCajero().getText()));
+                c3.setTiempo(Integer.valueOf(v.getTxtCajero().getText()));
 
-            //CAJERO 1
-              c2.start();
-//            
-//            //CAJERO 1
-              c3.start();
-            //PERSONA 1
-            //     v.getPersona1().setLocation(new Point(900, 450));
-//            h1.join();
-//            h2.join();
-//            h3.join();
-//            h4.join();
-//            h5.join();
-//            
-//            v.getPersona1().setLocation(1020, 180);
-//            v.getPersona2().setLocation(1020, 280);
-//            v.getPersona3().setLocation(1020, 380);
-//            v.getPersona4().setLocation(1020, 480);
-//            v.getPersona5().setLocation(1020, 580);
-//        } catch (InterruptedException ex) {
-//            Logger.getLogger(ListenerBotonIniciar.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        } catch (InterruptedException ex) {
-//            Logger.getLogger(ListenerBotonIniciar.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+                h1.resume();
+                h2.resume();
+                h3.resume();
+                h4.resume();
+                h5.resume();
+                c1.resume();
+                c2.resume();
+                c3.resume();
+
+            } else {
+                h1.setTiempo(Integer.valueOf(v.getTxtCliente().getText()));
+                h2.setTiempo(Integer.valueOf(v.getTxtCliente().getText()));
+                h3.setTiempo(Integer.valueOf(v.getTxtCliente().getText()));
+                h4.setTiempo(Integer.valueOf(v.getTxtCliente().getText()));
+                h5.setTiempo(Integer.valueOf(v.getTxtCliente().getText()));
+
+                c1.setTiempo(Integer.valueOf(v.getTxtCajero().getText()));
+                c2.setTiempo(Integer.valueOf(v.getTxtCajero().getText()));
+                c3.setTiempo(Integer.valueOf(v.getTxtCajero().getText()));
+
+                h1.start();
+                h2.start();
+                h3.start();
+                h4.start();
+                h5.start();
+                c1.start();
+                c2.start();
+                c3.start();
+            }
+        } catch (NumberFormatException n) {
+            JOptionPane.showMessageDialog(v, "Ingrese el tiempo");
+        }
+
     }
 
 }

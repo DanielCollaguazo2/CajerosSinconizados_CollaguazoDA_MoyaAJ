@@ -6,7 +6,10 @@ package vista;
 
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.ListModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -40,17 +43,21 @@ public class vista extends javax.swing.JFrame {
         persona3 = new javax.swing.JLabel();
         persona5 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         iniciar = new javax.swing.JButton();
         parar = new javax.swing.JButton();
+        txtCajero = new javax.swing.JTextField();
+        txtCliente = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        listCajero3 = new javax.swing.JList<>();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        listCajero1 = new javax.swing.JList<>();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        listCajero2 = new javax.swing.JList<>();
+        campo = new javax.swing.JScrollPane();
+        campoText3 = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        campoText1 = new javax.swing.JTextArea();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        campoText2 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -80,99 +87,88 @@ public class vista extends javax.swing.JFrame {
         getContentPane().add(cajero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 60, 125, 127));
 
         persona1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Azul.jpg"))); // NOI18N
-        getContentPane().add(persona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 551, -1, -1));
+        getContentPane().add(persona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, -1, -1));
 
         persona2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Naranja.jpg"))); // NOI18N
-        getContentPane().add(persona2, new org.netbeans.lib.awtextra.AbsoluteConstraints(416, 551, -1, -1));
+        getContentPane().add(persona2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, -1, -1));
 
         persona4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Rosa.jpg"))); // NOI18N
-        getContentPane().add(persona4, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 551, -1, -1));
+        getContentPane().add(persona4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 360, -1, -1));
 
         persona3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Rojo.jpg"))); // NOI18N
-        getContentPane().add(persona3, new org.netbeans.lib.awtextra.AbsoluteConstraints(524, 551, -1, -1));
+        getContentPane().add(persona3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, -1, -1));
 
         persona5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verde.jpg"))); // NOI18N
-        getContentPane().add(persona5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 551, -1, -1));
+        getContentPane().add(persona5, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 360, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tabla);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, 840, 170));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 840, 170));
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         iniciar.setText("Iniciar");
+        jPanel1.add(iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 170, 40));
 
         parar.setText("Parar");
+        jPanel1.add(parar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 170, 40));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(iniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(parar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(iniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(parar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-        );
+        txtCajero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCajeroActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtCajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 120, -1));
+        jPanel1.add(txtCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 120, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(878, 668, -1, -1));
+        jLabel2.setText("Clientes:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, -1, -1));
+
+        jLabel3.setText("Cajeros:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 440, -1, 210));
 
         jLabel1.setFont(new java.awt.Font("Raleway Black", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Banco");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 264, 34));
 
-        listCajero3.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Cliente O:", "Cuenta:", "Monto:", "Cliente D:", "Estado:" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        listCajero3.setToolTipText("");
-        jScrollPane4.setViewportView(listCajero3);
+        campoText3.setColumns(20);
+        campoText3.setRows(5);
+        campo.setViewportView(campoText3);
 
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, 150, 100));
+        getContentPane().add(campo, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 200, 160, 110));
 
-        listCajero1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Cliente O:", "Cuenta:", "Monto:", "Cliente D:", "Estado:" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        listCajero1.setToolTipText("");
-        jScrollPane6.setViewportView(listCajero1);
+        campoText1.setColumns(20);
+        campoText1.setRows(5);
+        jScrollPane3.setViewportView(campoText1);
 
-        getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 150, 100));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 160, 110));
 
-        listCajero2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Cliente O:", "Cuenta:", "Monto:", "Cliente D:", "Estado:" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        listCajero2.setToolTipText("");
-        jScrollPane7.setViewportView(listCajero2);
+        campoText2.setColumns(20);
+        campoText2.setRows(5);
+        jScrollPane5.setViewportView(campoText2);
 
-        getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 150, 100));
+        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 160, 110));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtCajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCajeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCajeroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,6 +208,9 @@ public class vista extends javax.swing.JFrame {
     public void listenerBotonIniciar(ActionListener listener){
         iniciar.addActionListener(listener);
     }
+    public void listenerBotonParar(ActionListener listener){
+        parar.addActionListener(listener);
+    }
 
     public JLabel getCajero1() {
         return cajero1;
@@ -244,37 +243,64 @@ public class vista extends javax.swing.JFrame {
     public JLabel getPersona5() {
         return persona5;
     }
-    public void setmodelListCajero1(ListModel m){
-        listCajero1.setModel(m);
+
+    public JTextField getTxtCajero() {
+        return txtCajero;
     }
-    public void setmodelListCajero2(ListModel m){
-        listCajero2.setModel(m);
+
+    public void setTxtCajero(JTextField txtCajero) {
+        this.txtCajero = txtCajero;
     }
-    public void setmodelListCajero3(ListModel m){
-        listCajero3.setModel(m);
+
+    public JTextField getTxtCliente() {
+        return txtCliente;
+    }
+
+    public void setTxtCliente(JTextField txtCliente) {
+        this.txtCliente = txtCliente;
+    }
+    
+    public JTextArea getCampoText1() {
+        return campoText1;
+    }
+
+    public JTextArea getCampoText2() {
+        return campoText2;
+    }
+
+    public JTextArea getCampoText3() {
+        return campoText3;
+    }
+    
+    public void setModelTable(TableModel model){
+    tabla.setModel(model);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cajero1;
     private javax.swing.JLabel cajero2;
     private javax.swing.JLabel cajero3;
+    private javax.swing.JScrollPane campo;
+    private javax.swing.JTextArea campoText1;
+    private javax.swing.JTextArea campoText2;
+    private javax.swing.JTextArea campoText3;
     private javax.swing.JButton iniciar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JList<String> listCajero1;
-    private javax.swing.JList<String> listCajero2;
-    private javax.swing.JList<String> listCajero3;
     private javax.swing.JButton parar;
     private javax.swing.JLabel persona1;
     private javax.swing.JLabel persona2;
     private javax.swing.JLabel persona3;
     private javax.swing.JLabel persona4;
     private javax.swing.JLabel persona5;
+    private javax.swing.JTable tabla;
+    private javax.swing.JTextField txtCajero;
+    private javax.swing.JTextField txtCliente;
     // End of variables declaration//GEN-END:variables
 }

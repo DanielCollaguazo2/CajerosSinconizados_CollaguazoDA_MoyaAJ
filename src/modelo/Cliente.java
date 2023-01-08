@@ -10,13 +10,14 @@ package modelo;
  */
 public class Cliente {
     private String nombre;
-    private int saldo;
     private Cliente cliente = null;
-    private int contador = 0;
+    private String nombreHilo = "";
+    private int SaldoInit=0;
+    private int SaldoFin=0;
 
     public Cliente(String nombre, int monto) {
         this.nombre = nombre;
-        this.saldo = monto;
+        this.SaldoInit = monto;
     }
 
     public String getNombre() {
@@ -27,13 +28,23 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public int getSaldo() {
-        return saldo;
+    public int getSaldoInit() {
+        return SaldoInit;
     }
 
-    public void setSaldo(int saldo) {
-        this.saldo = saldo;
+    public void setSaldoInit(int SaldoInit) {
+        this.SaldoInit = SaldoInit;
     }
+
+    public int getSaldoFin() {
+        return SaldoFin;
+    }
+
+    public void setSaldoFin(int SaldoFin) {
+        this.SaldoFin = SaldoFin;
+    }
+
+
 
     public Cliente getCliente() {
         return cliente;
@@ -43,13 +54,14 @@ public class Cliente {
         this.cliente = cliente;
     }
 
-    public int getContador() {
-        return contador;
+    public String getNombreHilo() {
+        return nombreHilo;
     }
 
-    public void setContador(int contador) {
-        this.contador = contador;
+    public void setNombreHilo(String nombreHilo) {
+        this.nombreHilo = nombreHilo;
     }
+
     
     
 }

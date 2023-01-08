@@ -21,8 +21,8 @@ public class Ticket {
     }
     
     public void generarValores(){
-        ClienteOr.setSaldo(ClienteOr.getSaldo()-monto);
-        clienteDes.setSaldo(clienteDes.getSaldo()+monto);
+        ClienteOr.setSaldoFin(ClienteOr.getSaldoInit()-monto);
+        clienteDes.setSaldoFin(clienteDes.getSaldoInit()+monto);
     }
 
     public Cliente getClienteOr() {
@@ -57,10 +57,6 @@ public class Ticket {
         this.estado = estado;
     }
 
-    @Override
-    public String toString() {
-        return "Cliente O: " + ClienteOr.getNombre() + "\nSaldo Cuenta: " + ClienteOr.getSaldo() + "\nMonto: " + monto + "\nEstado: " + estado;
-    }
     
      
 }
