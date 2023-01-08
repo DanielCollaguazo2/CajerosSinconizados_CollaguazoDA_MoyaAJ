@@ -14,36 +14,57 @@ import java.util.logging.Logger;
 public class bodega {
 
     boolean lleno = false;
-    int valor=0;
+    int valor = 0;
+    Cliente cliente = new Cliente("", 0);
+    boolean consumed = false;
+    boolean produced = true;
 
-    public synchronized void Producir(int valor) {
+    public synchronized void Producir(Cliente valor) {
         if (lleno == true) {
             try {
-                System.out.println("Esta esperando");
+                produced =false;
+                System.out.println("Esta esperando a producir");
                 wait();
             } catch (InterruptedException ex) {
-                Logger.getLogger(Buffer.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(bodega.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-
-        this.valor = valor;
-
+        produced=true;
+        this.cliente = valor;
         lleno = true;
         System.out.println("Productor genera " + valor + " Lleno = " + lleno);
         notifyAll();
     }
 
-    public synchronized void consumir() {
+    public synchronized Cliente consumir() {
         if (lleno == false) {
             try {
+                System.out.println("Esta esperando a consumir");
                 wait();
             } catch (InterruptedException ex) {
-                Logger.getLogger(Buffer.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(bodega.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-
         lleno = false;
         System.out.println("Consumidor consume" + valor);
         notifyAll();
+        return cliente;
     }
+
+    public boolean isConsumed() {
+        return consumed;
+    }
+
+    public void setConsumed(boolean consumed) {
+        this.consumed = consumed;
+    }
+
+    public boolean isProduced() {
+        return produced;
+    }
+
+    public void setProduced(boolean produced) {
+        this.produced = produced;
+    }
+
 }

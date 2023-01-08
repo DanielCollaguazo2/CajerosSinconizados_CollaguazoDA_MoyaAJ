@@ -6,6 +6,7 @@ package vista;
 
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
+import javax.swing.ListModel;
 
 /**
  *
@@ -38,14 +39,18 @@ public class vista extends javax.swing.JFrame {
         persona4 = new javax.swing.JLabel();
         persona3 = new javax.swing.JLabel();
         persona5 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         iniciar = new javax.swing.JButton();
         parar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        listCajero3 = new javax.swing.JList<>();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        listCajero1 = new javax.swing.JList<>();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        listCajero2 = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -89,10 +94,6 @@ public class vista extends javax.swing.JFrame {
         persona5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verde.jpg"))); // NOI18N
         getContentPane().add(persona5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 551, -1, -1));
 
-        jScrollPane1.setViewportView(jList1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 668, 351, 143));
-
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -106,7 +107,7 @@ public class vista extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 670, 480, 142));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, 840, 170));
 
         iniciar.setText("Iniciar");
 
@@ -139,6 +140,36 @@ public class vista extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Banco");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 264, 34));
+
+        listCajero3.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Cliente O:", "Cuenta:", "Monto:", "Cliente D:", "Estado:" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listCajero3.setToolTipText("");
+        jScrollPane4.setViewportView(listCajero3);
+
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, 150, 100));
+
+        listCajero1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Cliente O:", "Cuenta:", "Monto:", "Cliente D:", "Estado:" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listCajero1.setToolTipText("");
+        jScrollPane6.setViewportView(listCajero1);
+
+        getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 150, 100));
+
+        listCajero2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Cliente O:", "Cuenta:", "Monto:", "Cliente D:", "Estado:" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listCajero2.setToolTipText("");
+        jScrollPane7.setViewportView(listCajero2);
+
+        getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 150, 100));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -213,6 +244,15 @@ public class vista extends javax.swing.JFrame {
     public JLabel getPersona5() {
         return persona5;
     }
+    public void setmodelListCajero1(ListModel m){
+        listCajero1.setModel(m);
+    }
+    public void setmodelListCajero2(ListModel m){
+        listCajero2.setModel(m);
+    }
+    public void setmodelListCajero3(ListModel m){
+        listCajero3.setModel(m);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cajero1;
@@ -220,12 +260,16 @@ public class vista extends javax.swing.JFrame {
     private javax.swing.JLabel cajero3;
     private javax.swing.JButton iniciar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JList<String> listCajero1;
+    private javax.swing.JList<String> listCajero2;
+    private javax.swing.JList<String> listCajero3;
     private javax.swing.JButton parar;
     private javax.swing.JLabel persona1;
     private javax.swing.JLabel persona2;
